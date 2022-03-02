@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.junefw.infra.modules.code.CodeMpp"> <!--  지금파일저장 -->
+
+	<resultMap id="resultMapObj"
+		type="com.junefw.infra.modules.code.CodeMpp"></resultMap>  <!-- 결과객체저장 -->
+
+	<select id="selectList" resultMap="resultMapObj">
+		select
+		 a.ifcgSeq
+		 ,a.ifcgName
+		 from infrCodegroup a 
+		 where 1 = 1 
+		 and ifcgDelNy = 0	   <!-- 세미콜론안따라오게 조심 -->
+	</select>
+
+</mapper>
